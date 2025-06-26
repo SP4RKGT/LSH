@@ -1,6 +1,5 @@
 # LSH
-# ONLY FOR LINUX
-LSH is an extremely light shell written completely in c++ for embedded systems
+# LSH is an extremely light shell written completely in c++ for embedded systems
 
 Installation(option 1):
 Clone this repo with "git clone https://github.com/SP4RKGT/LSH"
