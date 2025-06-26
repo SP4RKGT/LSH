@@ -57,7 +57,7 @@ void cd(const std::string& path) {
         perror("cd failed");
     }
 }
-        if (input == "cls" || input == "clear") {
+if (input == "cls" || input == "clear") {
             clear_screen();
             continue;
         }
