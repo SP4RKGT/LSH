@@ -2,10 +2,13 @@
 # ONLY FOR LINUX
 LSH is an extremely light shell written completely in c++ for embedded systems
 
-Installation:
+Installation(option 1):
 Clone this repo with "git clone https://github.com/SP4RKGT/LSH"
 run *clang++ -Os -o main main.cpp*
 You will now have a file called "main"
+
+Installation(option 2):
+Go to releases and download the "main" bianary
 
 Optional:
 If you want you can move it to /usr/bin/lsh with *install -Dm755 main /usr/bin/lsh*
