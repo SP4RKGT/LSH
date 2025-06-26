@@ -8,7 +8,7 @@ run *clang++ -Os -o main main.cpp*
 You will now have a file called "main"
 
 Installation(option 2):
-Go to releases and download the "main" bianary
+Go to lshdownload.duckdns.org and click the download button
 
 Optional:
 If you want you can move it to /usr/bin/lsh with *install -Dm755 main /usr/bin/lsh*
