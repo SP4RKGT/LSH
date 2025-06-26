@@ -98,7 +98,7 @@ int main() {
             CloseHandle(pi.hProcess);
             CloseHandle(pi.hThread);
         } else {
-            // fork() failed, oh nooo
+            // cant even make a process
             std::cerr << "CreateProcess failed\n";
         }
     }
