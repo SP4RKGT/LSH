@@ -7,6 +7,29 @@
 
 std::string input;
 
+void clear_screen() {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    if (hConsole == INVALID_HANDLE_VALUE) return;
+
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    DWORD count;
+    DWORD cellCount;
+
+    if (!GetConsoleScreenBufferInfo(hConsole, &csbi)) return;
+
+    cellCount = csbi.dwSize.X * csbi.dwSize.Y;
+
+    // empty the box
+    FillConsoleOutputCharacter(hConsole, ' ', cellCount, {0, 0}, &count);
+
+    // fill the box with with air
+    FillConsoleOutputAttribute(hConsole, csbi.wAttributes, cellCount, {0, 0}, &count);
+
+    // make some space for the kitty
+    SetConsoleCursorPosition(hConsole, {0, 0});
+}
+
+
 // CD command to handle ~ expansion
 void cd(const std::string& path) {
     char* home_dir = getenv("USERPROFILE");  // where is your home child?
@@ -34,6 +57,10 @@ void cd(const std::string& path) {
         perror("cd failed");
     }
 }
+        if (input == "cls" || input == "clear") {
+            clear_screen();
+            continue;
+        }
 
 // Prompt function (keep me busy)
 int prompt() {
