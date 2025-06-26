@@ -1,4 +1,3 @@
-// NOT WORKING
 #include <iostream>
 #include <string>
 #include <vector>
@@ -58,10 +57,6 @@ void cd(const std::string& path) {
         perror("cd failed");
     }
 }
-if (input == "cls" || input == "clear") {
-            clear_screen();
-            continue;
-        }
 
 // Prompt function (keep me busy)
 int prompt() {
@@ -71,6 +66,7 @@ int prompt() {
     if (input == "exit") {
         return 0; // Exit the shell when you type "exit"
     }
+
     return 1; // Keep going, we're not done yet
 }
 
@@ -104,6 +100,11 @@ int main() {
             }
             continue;
         }
+
+	if (input == "cls" || input == "clear") {
+    clear_screen();
+    continue; // <- important: skip CreateProcess
+}
 
         // SUMMON THE CHILD
         STARTUPINFO si = {sizeof(si)};
