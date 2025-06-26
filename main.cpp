@@ -63,7 +63,7 @@ std::vector<std::string> parse_input(const std::string& str) {
 int main() {
     while (true) {
         if (prompt() == 0) {
-            break; // Peace out when you type "exit"
+            break; // std::cout << "Goodbye World\n";
         }
 
         // Let's handle cd first, don't want to mess that up
@@ -73,10 +73,10 @@ int main() {
                 // If there's an argument for the cd command, let's go there
                 cd(args[1]);
             } else {
-                // No path given? Just go home, buddy!
+                // for thou art in confusion, thou shalt be guided by the hand of thy code
                 cd("~");
             }
-            continue; // i couldnt give 2 shits about the rest, only if its cd tho
+            continue;
         }
 
         // SUMMON THE CHILD 
@@ -94,7 +94,7 @@ int main() {
             for (const std::string& arg : args_str) {
                 args_c_str.push_back(const_cast<char*>(arg.c_str()));
             }
-            // some nullptr shit idk
+            // some nullptr idk bro
             args_c_str.push_back(nullptr);
 
             // Let's execute the command in the child process
